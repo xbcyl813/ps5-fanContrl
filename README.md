@@ -58,7 +58,7 @@ export PS5_PAYLOAD_SDK=/opt/ps5-payload-sdk
 make clean && make
 ```
 
-The compiled payload `ps5-fan-control.elf` can be sent to your PS5 via your preferred payload loader (e.g., `elfldr`, `etaHEN`, or `nc`).
+The compiled payload `ps5-fancontrl.elf` can be sent to your PS5 via your preferred payload loader (e.g., `elfldr`, `etaHEN`, or `nc`).
 
 ---
 
