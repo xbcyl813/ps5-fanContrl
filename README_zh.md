@@ -26,8 +26,8 @@
 
 创建一个名为 `fan_control.ini` 的文件，并放置在以下任意路径（按优先级从高到低读取）：
 
-1. **U 盘根目录（最高优先级）：** `/mnt/usb0/fan_control.ini` ~ `/mnt/usb7/fan_control.ini`
-2. **主机内置存储（备用路径）：** `/data/fan_control.ini`
+1. **主机内置存储（最高优先级）：** `/data/fan_control.ini`
+2. **U 盘根目录（备用路径）：** `/mnt/usb0/fan_control.ini` ~ `/mnt/usb7/fan_control.ini`
 
 ### `fan_control.ini` 配置示例
 
