@@ -11,7 +11,7 @@ CFLAGS  := -Wall -Wextra -Os
 LDFLAGS := -lkernel_sys -lkernel -lc
 
 # 目标文件与源文件
-TARGET  := ps5-fan-control.elf
+TARGET  := ps5-fancontrl.elf
 SRCS    := main.c
 
 # 默认构建目标
