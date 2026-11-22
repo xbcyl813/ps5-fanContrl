@@ -25,12 +25,12 @@
 #define AUTOSERVO_SELECTOR_0  0
 #define TARGET_TEMP_OFFSET    5
 
-#define DEFAULT_THRESHOLD 70
+#define DEFAULT_THRESHOLD 80
 #define MIN_THRESHOLD 30
 #define MAX_THRESHOLD 90
 #define USB_MAX_COUNT 8
-#define PROCESS_NAME "ps5-fan-control.elf"
-#define DEFAULT_INTERVAL_SECONDS 5
+#define PROCESS_NAME "ps5-fancontrl.elf"
+#define DEFAULT_INTERVAL_SECONDS 15
 #define MIN_INTERVAL_SECONDS 1
 #define MAX_INTERVAL_SECONDS 3600
 #define MAX_SOC_SENSORS 16
@@ -216,7 +216,7 @@ static config_read_result_t read_config_from_path(const char *path, fan_config_t
     }
     config.threshold = DEFAULT_THRESHOLD;
     config.interval = DEFAULT_INTERVAL_SECONDS;
-    config.show_status = false;
+    config.show_status = true;
 
     while (fgets(line, sizeof(line), fp) != NULL) {
         parse_config_line(line, &config, &has_threshold, &invalid);
@@ -252,7 +252,7 @@ static bool read_config(fan_config_t *config_out) {
     }
     config_out->threshold = DEFAULT_THRESHOLD;
     config_out->interval = DEFAULT_INTERVAL_SECONDS;
-    config_out->show_status = false;
+    config_out->show_status = true;
     return true;
 }
 //
