@@ -35,8 +35,8 @@ Create a file named `fan_control.ini` and place it in one of the following locat
 # Target temperature threshold in Celsius (Range: 30 - 90, Default: 80)
 target_temperature=80
 
-# Polling & guard refresh interval in seconds (Range: 1 - 3600, Default: 5)
-interval=5
+# Polling & guard refresh interval in seconds (Range: 1 - 3600, Default: 15)
+interval=15
 
 # Show PS5 system notification when target temperature is applied/re-applied (1 = Enable, 0 = Disable)
 show_status=1
