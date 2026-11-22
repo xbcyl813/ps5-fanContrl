@@ -32,8 +32,8 @@ Create a file named `fan_control.ini` and place it in one of the following locat
 ### Example `fan_control.ini`
 
 ```ini
-# Target temperature threshold in Celsius (Range: 30 - 90, Default: 70)
-target_temperature=70
+# Target temperature threshold in Celsius (Range: 30 - 90, Default: 80)
+target_temperature=80
 
 # Polling & guard refresh interval in seconds (Range: 1 - 3600, Default: 5)
 interval=5
