@@ -25,13 +25,10 @@ jobs:
       - name: Install PS5 Payload SDK
         run: |
           sudo apt-get update
-          sudo apt-get install -y wget tar xz-utils make
-          # 下载并解压最新版 ps5-payload-sdk 到默认目录 /opt/ps5-payload-sdk
-          SDK_URL=$(curl -s https://github.com | grep "browser_download_url.*tar.xz" | cut -d '"' -f 4 | head -n 1)
-          echo "Downloading SDK from: $SDK_URL"
-          wget -qO /tmp/ps5-payload-sdk.tar.xz "$SDK_URL"
-          sudo mkdir -p /opt/ps5-payload-sdk
-          sudo tar -xJf /tmp/ps5-payload-sdk.tar.xz -C /opt/ps5-payload-sdk --strip-components=1
+          sudo apt-get install -y wget unzip make clang lld
+          # 使用官方固定的最新版 zip 直链下载并解压到 /opt/ps5-payload-sdk
+          wget -qO /tmp/ps5-payload-sdk.zip https://github.com/ps5-payload-dev/sdk/releases/latest/download/ps5-payload-sdk.zip
+          sudo unzip -q -o /tmp/ps5-payload-sdk.zip -d /opt
 
       - name: Build Payload
         env:
