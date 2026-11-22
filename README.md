@@ -26,8 +26,8 @@ A configurable PS5 fan speed controller that manages boost thresholds (target te
 
 Create a file named `fan_control.ini` and place it in one of the following locations (checked in order of priority):
 
-1. **USB Drive (Highest Priority):** `/mnt/usb0/fan_control.ini` ~ `/mnt/usb7/fan_control.ini`
-2. **Internal Storage (Fallback):** `/data/fan_control.ini`
+1. **Internal Storage (Highest Priority):** `/data/fan_control.ini`
+2. **USB Drive (Fallback):** `/mnt/usb0/fan_control.ini` ~ `/mnt/usb7/fan_control.ini`
 
 ### Example `fan_control.ini`
 
