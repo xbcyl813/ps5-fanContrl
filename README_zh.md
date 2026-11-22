@@ -58,7 +58,7 @@ export PS5_PAYLOAD_SDK=/opt/ps5-payload-sdk
 make clean && make
 ```
 
-编译生成的 `ps5-fan-control.elf` 可通过任意 Payload 加载器（如 `elfldr`、`etaHEN` 或网络端口推送）发送至 PS5 运行。
+编译生成的 `ps5-fancontrl.elf` 可通过任意 Payload 加载器（如 `elfldr`、`etaHEN` 或网络端口推送）发送至 PS5 运行。
 
 ---
 
