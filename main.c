@@ -237,19 +237,24 @@ static bool read_config(fan_config_t *config_out) {
     config_read_result_t result;
     bool found_config_file = false;
 
+    // 1. 优先读取主机内置存储 (/data/fan_control.ini)
+    result = read_config_from_path(DATA_CONFIG_PATH, config_out);
+    if (result == CONFIG_VALID) return true;
+    if (result == CONFIG_INVALID) found_config_file = true;
+
+    // 2. 其次读取 U 盘根目录 (/mnt/usb0/fan_control.ini ~ /mnt/usb7/fan_control.ini)
     for (int i = 0; i < USB_MAX_COUNT; i++) {
         snprintf(path, sizeof(path), "/mnt/usb%d/fan_control.ini", i);
         result = read_config_from_path(path, config_out);
         if (result == CONFIG_VALID) return true;
         if (result == CONFIG_INVALID) found_config_file = true;
     }
-    result = read_config_from_path(DATA_CONFIG_PATH, config_out);
-    if (result == CONFIG_VALID) return true;
-    if (result == CONFIG_INVALID) found_config_file = true;
 
     if (found_config_file) {
         return false;
     }
+
+    // 3. 均未找到时使用默认参数
     config_out->threshold = DEFAULT_THRESHOLD;
     config_out->interval = DEFAULT_INTERVAL_SECONDS;
     config_out->show_status = true;
